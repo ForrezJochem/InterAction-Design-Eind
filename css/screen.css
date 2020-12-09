@@ -1,0 +1,200 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2")
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --global-page-backgroundcolor: #e7e7e7;
+
+    --global-color-alpha-light: #1AB6FF;
+    --global-color-alpha: #009DE6;
+    --global-color-alpha-dark: #2E77E6;
+
+    --global-color-neutral-xx-light: #FFFFFF;
+    --global-color-neutral-x-light: #C6CACC;
+    --global-color-neutral-light: #616466;
+    --global-color-neutral: #1B1918;
+    --global-color-neutral-dark: #17191A;
+
+    /* shadows */
+    --global-card-boxShadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+    --global-option-boxShadow: 0 0 0px 3px rgba(26, 182, 255, 0.3);
+
+    /* borders */
+    --global-input-border: 2px solid var(--global-color-alpha);
+    --custom-option-border-checked: 2px solid var(--global-color-alpha);
+    --custom-option-border: 2px solid var(--global-color-neutral-x-light);
+
+    /* baseline */
+    --global-baseline: 0.5rem; /* = 8px */
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-xs: calc(var(--global-baseline) * .5); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.8rem;
+    font-family: "Inter Web", Helvetica, arial, sans-serif;
+    font-weight: 400;
+    color: var(--global-color-neutral);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--global-page-backgroundcolor);
+}
+body{
+    padding-top: var(--global-whitespace-lg);
+    width: 100%;
+    display: grid;
+    justify-items: center;
+
+    background-color: var(--color-background);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+p{
+    font-weight: 400;
+    margin-bottom: var(--global-whitespace-sm);
+    font-size: 16px;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: rgb(103, 103, 200);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background:rgb(103, 103, 200);
+    color: white;
+    text-shadow: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.c-landing-app {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-self: center;
+    align-items: center;
+}
+
+.c-landing-mocup{
+    height: 640px;
+    
+}
+
+.c-landing-header .c-header-explanation {
+    margin-bottom: var(--global-whitespace-lg);
+}
+
+.c-landing-header .c-header-explanation p {
+    font-size: 16px;
+    margin: var(--global-whitespace-sm);
+}
+
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: calc(var(--global-whitespace)/4);
+    border: none;
+    color: var(--global-color-neutral-light);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: var(--global-whitespace-md);
+    padding: calc(12rem/16) var(--global-whitespace-md);
+    outline: none;
+}
+
+.c-input:focus,
+.c-input:hover {
+    box-shadow: var(--global-option-boxShadow);
+}
+
+.c-button {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: calc(20rem/16);
+    border-radius: calc(var(--global-whitespace)/4);
+    background-color: var(--global-color-alpha);
+    color: #FFFFFF;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.c-button:focus,
+.c-button:active,
+.c-button:hover {
+    box-shadow: var(--global-option-boxShadow);
+}
+
+@media(max-width:940px){
+    
+    .c-app-landing {  
+        grid-template-columns: 100%;
+    }
+}
+
+@media(max-width:725px){
+    .c-landing-mocup{
+        display: none;
+    }
+    .c-landing-app{
+        width: 400px;
+        grid-template-columns: 100%;
+    }
+}
+
+@media(max-width:540px){
+    .c-landing-app {
+        padding: var(--global-whitespace-md);
+    }
+}
+
+@media(max-width:400px){
+    .c-graph {
+        width: 200px;
+    }
+}
