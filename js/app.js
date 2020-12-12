@@ -25,11 +25,8 @@ let drawMultiChart = (labels, test, data1) => {
         }]
       },
       options: {
+        maintainAspectRatio: false,
         responsive: true,
-        title: {
-          display: true,
-          text: 'Corona tests'
-        },
         tooltips: {
           enabled: true,
           mode: 'x-axis',
@@ -98,6 +95,5 @@ let drawMultiChart = (labels, test, data1) => {
   };
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.info("DOM geladen");
     init();
   });
