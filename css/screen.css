@@ -18,6 +18,9 @@
 #Variables
 \*------------------------------------*/
 
+
+
+
 :root {
     /* colors */
     --global-page-backgroundcolor: #e7e7e7;
@@ -72,6 +75,8 @@ body{
     background-color: var(--color-background);
 }
 
+
+
 *,
 *:before,
 *:after {
@@ -108,6 +113,41 @@ img {
     vertical-align: top;
 }
 
+.wrapper-index {
+    display: grid;
+    grid-gap: 10px;
+    
+    grid-template-columns: 33% 33% 33%;
+    
+}
+
+.header-title {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.header-input {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.content {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+
+.c-card {
+    background-color: var(--global-color-neutral-xx-light);
+    padding: var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-whitespace-md) var(--global-whitespace-lg);
+    border-radius: calc(1rem/4);
+    width: 100rem;
+    box-shadow: var(--global-card-boxShadow);
+}
+
 .c-landing-app {
     padding: 2rem;
     display: grid;
@@ -118,7 +158,6 @@ img {
 
 .c-landing-mocup{
     height: 640px;
-    
 }
 
 .c-landing-header .c-header-explanation {
@@ -129,6 +168,22 @@ img {
     font-size: 16px;
     margin: var(--global-whitespace-sm);
 }
+
+
+.c-button {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: calc(20rem/16);
+    border-radius: calc(var(--global-whitespace)/4);
+    background-color: var(--global-color-alpha);
+    color: #FFFFFF;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+
 
 .c-input {
     -webkit-appearance: none;
@@ -146,22 +201,18 @@ img {
     outline: none;
 }
 
-.c-input:focus,
 .c-input:hover {
-    box-shadow: var(--global-option-boxShadow);
+    border-color: var(--global-color-neutral-x-light);
 }
 
-.c-button {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: calc(20rem/16);
-    border-radius: calc(var(--global-whitespace)/4);
-    background-color: var(--global-color-alpha);
-    color: #FFFFFF;
-    padding: 1rem;
-    width: 100%;
-    outline: none;
-    border: none;
+.c-input:focus,
+.c-input:active {
+    border-color: var(--global-color-alpha-light);
+    box-shadow: var(--global-input-focus-shadow);
+}
+
+.c-custom-select__input {
+    padding-right: calc(var(--global-baseline) * 5);
 }
 
 .c-button:focus,
@@ -169,6 +220,9 @@ img {
 .c-button:hover {
     box-shadow: var(--global-option-boxShadow);
 }
+
+
+
 
 @media(max-width:940px){
     

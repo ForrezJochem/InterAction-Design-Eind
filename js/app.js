@@ -1,8 +1,9 @@
+let data, graph, myChart
 
-const drawMultiChart = function (labels, test, data1) {
-  var ctx = document.querySelector(".js-multi-Chart").getContext("2d");
-    let config = {
-      type: 'line',
+let drawMultiChart = (labels, test, data1) => {
+
+  myChart = new Chart(graph,{
+    type: 'line',
       data: {
         labels: labels,
         datasets: [{
@@ -35,46 +36,68 @@ const drawMultiChart = function (labels, test, data1) {
           xPadding: 10,
           yPadding: 10,
         },
-
       }
-    };
-    let myChart = new Chart(ctx, config);
+    })
   };
-  const getData = (data) => {
-    var labels = [];
-    var test = [];
-    var posTest = [];
+  const DataForChart = (data ,selector="WestVlaanderen") => {
+    
+    let labels = [];
+    let test = [];
+    let posTest = [];
     data.forEach(dataPoint => {
-      if(dataPoint["PROVINCE"] == "WestVlaanderen"){
+      if(dataPoint["PROVINCE"] == selector){
         labels.push(dataPoint["DATE"])
         test.push(dataPoint["TESTS_ALL"])
         posTest.push(dataPoint["TESTS_ALL_POS"])
-        console.log(dataPoint);
       }
     });
-    console.log(test);
-    console.log(posTest)
     drawMultiChart(labels, test, posTest);
   };
 
+  const Selector = (data) =>{
+    const selector = document.querySelector(".js-province-select");
+    let province = [];
+    data.forEach(dataPoint => {
+      if(dataPoint["PROVINCE"] != undefined){
+        if(!province.includes(dataPoint["PROVINCE"])){
+          let option = document.createElement("option");
+          if(dataPoint["PROVINCE"] == "WestVlaanderen"){
+            option.selected = dataPoint["PROVINCE"]
+          }
+          option.value = dataPoint["PROVINCE"];
+          option.text = dataPoint["PROVINCE"];
+          selector.appendChild(option)
+          province.push(dataPoint["PROVINCE"])
+        }
+      }
+    });
+    
+  }
 
-  const GetNumbers = function() {
-
-    const endpoint = `https://epistat.sciensano.be/Data/COVID19BE_tests.json`;
+  const listenToUi =  () => {
+    const selector = document.querySelector(".js-province-select")
+    selector.addEventListener("change", () => {
+      myChart.destroy();
+      DataForChart(data, selector.value);
+    })
+  }
   
-    fetch(endpoint)
-      .then((r) => r.json())
-      .then((json) => {
-        console.log(json)
-        getData(json);
-      })
-  };
   
-  const init = () => {
-    GetNumbers();
+  const getJson = async () => {
+    const url = 'https://epistat.sciensano.be/Data/COVID19BE_tests.json';
+    const r = await fetch(url);
+    return await r.json();
+  } 
+  
+  const init = async () => {
+    graph = document.querySelector(".js-multi-Chart");
+    data = await getJson()
+    DataForChart(data);
+    Selector(data);
+    listenToUi();
   };
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     console.info("DOM geladen");
     init();
   });
