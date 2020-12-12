@@ -27,6 +27,14 @@ let drawMultiChart = (labels, test, data1) => {
       options: {
         maintainAspectRatio: false,
         responsive: true,
+        scales:{
+          xAxes: [{
+            type: 'time',
+                time: {
+                    unit: 'month'
+                }
+          }]
+        },
         tooltips: {
           enabled: true,
           mode: 'x-axis',
