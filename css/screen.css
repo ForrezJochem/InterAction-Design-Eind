@@ -144,10 +144,8 @@ img {
 
 .c-card {
     background-color: var(--global-color-neutral-xx-light);
-    padding: var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-whitespace-md) var(--global-whitespace-lg);
+    padding: var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-whitespace-lg);
     border-radius: 10px;
-    margin-left: 32px;
-    margin-right: 32px;
     width: auto;
     box-shadow: var(--global-card-boxShadow);
 }
@@ -197,7 +195,7 @@ img {
     border: var(--global-input-border);
     border-radius: 10px;
     outline: none;
-    box-shadow: var(--global-input-shadow);
+    box-shadow: var(--global-card-boxShadow);
 }
 
 .c-province-select:hover {
