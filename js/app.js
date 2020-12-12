@@ -9,8 +9,8 @@ let drawMultiChart = (labels, test, data1) => {
         datasets: [{
           label: 'test per day',
           fill: false,
-          backgroundColor: "red",
-          borderColor: "red",
+          backgroundColor: "#009DE6",
+          borderColor: "#009DE6",
           pointRadius: 0,
           pointHoverRadius: 0,
           data: test,
