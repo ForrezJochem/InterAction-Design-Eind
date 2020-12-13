@@ -27,12 +27,19 @@ let drawMultiChart = (labels, test, data1) => {
       options: {
         maintainAspectRatio: false,
         responsive: true,
+        legend: {
+          position: 'top',
+          labels: {
+            defaultFontFamily: (Chart.defaults.global.defaultFontFamily = "'Source Sans Pro', 'Helvetica', 'arial', 'sans-serif'"),
+            boxWidth: 10,
+          },
+        },
         scales:{
           xAxes: [{
             type: 'time',
-                time: {
-                    unit: 'month'
-                }
+            time: {
+              unit: 'month'
+              }
           }]
         },
         tooltips: {
