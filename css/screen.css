@@ -102,7 +102,6 @@ body{
     width: 100%;
     display: grid;
     justify-items: center;
-    background-color: var(--color-background);
 }
 
 *,
@@ -158,10 +157,9 @@ img {
     margin-bottom: auto;
 }
 
-
-
 h1 {
     font-weight: 700;
+    width: 520px;
 }
 
 h1 {
@@ -174,8 +172,6 @@ h1 {
 p {
     margin: 0 0 var(--global-whitespace);
 }
-
-
 
 
 .c-card {
@@ -248,6 +244,7 @@ p {
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     border-radius: 10px;
     outline: none;
+    
     box-shadow: var(--global-card-boxShadow);
 }
 .c-province-select:hover {
@@ -351,27 +348,125 @@ p {
 #MEDIA
 \*------------------------------------*/
 
-
-
-
-@media (max-width: 576px) {
-
+@media (min-width: 320px) {
+    .c-chart{
+        height: 200px;
+        width: 300px;
+        padding: 0 0 0 0;
+    }
+    .header-title {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    h1{
+        font-size: 16px;
+        width: 200px;
+    }
+    .c-province-select{
+        font-size: 8px;
+        
+    }
+    
+    .header-input {
+        grid-column: 3;
+        grid-row: 1;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+@media (min-width: 425px) {
+    .c-chart{
+        height: 200px;
+        width: 300px;
+        padding: 0 0 0 0;
+    }
+    h1{
+        font-size: 16px;
+        width: 200px;
+    }
+    .c-province-select{
+        font-size: 8px;
+        margin-right: 8px;
+    }
+    .header-title {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .c-card{
+        padding: 16px;
+    }
+    
 }
 
-@media (max-width: 768px) {
+@media (min-width: 576px) {
+    .c-chart{
+        height: 200px;
+        width: 500px;
+        padding: 0 8px 0 8px;
+    }
+    h1{
+        font-size: 16px;
+        width: 200px;
+    }
+    .c-province-select{
+        font-size: 8px;
+    }
+    .header-title {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media (min-width: 768px) {
     .c-landing-mocup{
         display: none;
     }
     .c-landing-app{
         grid-template-columns: 100%;
     }
+    .c-chart{
+        height: 200px;
+        width: 600px;
+        padding: 0 16px 0 16px;
+    }
+    h1{
+        font-size: 16px;
+        width: 520px;
+    }
+    .c-province-select{
+        font-size: 8px;
+    }
+    .c-card{
+        padding: 32px;
+    }
 
 }
 
-@media (max-width: 992px) {
-
+@media (min-width: 992px) {
+    .c-chart{
+        height: 300px;
+        width: 900px;
+    }
+    h1{
+        font-size: 24px;
+    }
+    .c-province-select{
+        font-size: 16px;
+    }
 }
 
-@media (max-width: 1200px) {
-
+@media (min-width: 1440px) {
+    .c-chart{
+        height: 400px;
+        width: 1400px;
+        padding: 0 48px 0 48px;
+    }
+    h1{
+        font-size: 36px;
+    }
+    .header-title {
+        grid-column: 2;
+    }
+    
 }

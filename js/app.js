@@ -11,6 +11,7 @@ let drawMultiChart = (labels, test, data1) => {
           fill: false,
           backgroundColor: "#009DE6",
           borderColor: "#009DE6",
+          borderWidth: 2,
           pointRadius: 0,
           pointHoverRadius: 0,
           data: test,
@@ -20,6 +21,7 @@ let drawMultiChart = (labels, test, data1) => {
           backgroundColor: "green",
           pointRadius: 0,
           pointHoverRadius: 0,
+          borderWidth: 2,
           borderColor: "green",
           data: data1,
         }]
