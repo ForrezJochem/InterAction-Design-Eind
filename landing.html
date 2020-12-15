@@ -6,6 +6,7 @@
     <title>Corona landing</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/screen.css">
+    <script src="./js/validation.js"></script>
 </head>
 <body class="c-landing-body">
     <div class="c-landing-app ">
@@ -18,12 +19,17 @@
         
             <div class="c-form">
                 <form>
-                    <p>
-                        <label for="email">Email</label>
+                    <p class="c-form-field js-email-field">
+                        <label class="c-label js-email-label" for="username">
+                            Email address
+                            <span class="c-label__error-message js-email-error-message">
+                                This field is required
+                            </span>
+                        </label>
+                        <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="john@doe.com" required>
                     </p>
-                    <input class="c-input" type="email" id="email" name="email" placeholder="John.Doe@email.com" required>
                     <p>
-                        <button class="c-button">Submit</button>
+                        <button class="c-button js-submit-button">Submit</button>
                     </p>
                 </form> 
             </div>
