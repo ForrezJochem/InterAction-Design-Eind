@@ -37,7 +37,7 @@
     --global-color-neutral-x-dark: #606274;
     --global-color-neutral-xx-dark: #4b4c60;
     --global-color-neutral-xxx-dark: #35374d;
-    --global-color-neutral-xxxx-dark: #20223a;
+    --global-color-neutral-xxxx-dark: #130322;
     --global-color-error: #FF3333;
     --global-color-error-transparent: #FF3333bf;
     --global-color-error-x-transparent: #FF33334d;
@@ -244,7 +244,7 @@ p {
     font-family: inherit;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: var(--global-color-neutral);
+    color: var(--global-color-neutral-xxx-dark);
     box-shadow: var(--global-card-boxShadow);
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     border-radius: 10px;
